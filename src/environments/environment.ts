@@ -4,5 +4,8 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: {
+    apiJcdecaux: 'https://api.jcdecaux.com/vls/v1/stations?apiKey=addd7ff2bbd77464e61868d3e588e8e957c7d2a6'
+  }
 };

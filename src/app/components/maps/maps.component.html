@@ -1,0 +1,14 @@
+<select (change)="selectCity($event.target.value)">
+  <option *ngFor="let city of cities" value="{{city}}">{{city}}</option>
+</select>
+<agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+  <agm-marker-cluster [imagePath]="'https://googlemaps.github.io/js-marker-clusterer/images/m'">
+    <agm-marker *ngFor="let s of stations" [latitude]="s.position.lat" [longitude]="s.position.lng">
+      <agm-info-window>
+        <strong>{{s.contract_name}} - {{s.status}}</strong>
+        <p><i>{{s.address}}</i></p>
+        <p> Disponible : {{s.available_bikes}}</p>
+      </agm-info-window>
+    </agm-marker>
+  </agm-marker-cluster>
+</agm-map>
